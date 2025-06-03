@@ -3,9 +3,9 @@ import fetch from 'node-fetch';
 export default async function handler(req, res) {
   const API_KEY = process.env.AIRTABLE_API_KEY;
   const BASE_ID = process.env.AIRTABLE_BASE_ID;
-  const TABLE_NAME = process.env.AIRTABLE_TABLE_NAME;
+  const TABLE_NAME = 'Logins';  // Ganti dengan nama tabel kamu
 
-  if (!API_KEY || !BASE_ID || !TABLE_NAME) {
+  if (!API_KEY || !BASE_ID) {
     return res.status(500).json({ error: 'Missing environment variables' });
   }
 
